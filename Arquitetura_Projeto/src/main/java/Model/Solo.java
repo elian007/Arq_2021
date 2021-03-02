@@ -7,10 +7,21 @@ package Model;
  */
 public class Solo {
     
-    public double calculoFosforo(double solo, double ideal){
-        double resultado = 0;
+    public double calculoFosforo(double solo, String textura, double teor){
+        double ideal;
+        double soloCorrigido;
         
-        return resultado;
+        if("Argiloso".equals(textura)){
+            ideal = 9.0;
+        }
+        if("Textura Média".equals(textura)){
+            ideal = 12.0;
+        }
+        
+        if(teor > 0.01){
+            return soloCorrigido = teor;
+        }
+        return solo;
     }
     
      public double calculoPotassio(double solo, double ideal){
