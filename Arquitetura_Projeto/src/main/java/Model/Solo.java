@@ -24,6 +24,7 @@ public class Solo {
         return solo;
     }
     
+    /*
      public double calculoPotassio(double solo, double ideal){
         double resultado = 0;
         
@@ -55,4 +56,5 @@ public class Solo {
         
         return resultado;
     }
+*/
 }
