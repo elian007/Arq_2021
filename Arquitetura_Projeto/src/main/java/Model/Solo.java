@@ -7,7 +7,7 @@ package Model;
  */
 public class Solo {
     
-    public double calculoFosforo(double solo, String textura, double teor){
+    public double calculoFosforo(double solo, String textura, double teorParaAtingir){
         double ideal;
         double soloCorrigido;
         
@@ -18,8 +18,8 @@ public class Solo {
             ideal = 12.0;
         }
         
-        if(teor > 0.01){
-            return soloCorrigido = teor;
+        if(teorParaAtingir > 0.01){
+            return soloCorrigido = teorParaAtingir;
         }
         return solo;
     }
