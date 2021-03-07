@@ -8,7 +8,7 @@ package Model;
 public class Solo {
     
     //============================Cálculos Fósforo====================================
-    public double calculoFosforo(double solo, String textura, double teorParaAtingir){
+    public double calculoFosforo(double fosforoNoSolo, String textura, double teorParaAtingir){
         double ideal;
         double soloCorrigido;
         
@@ -22,7 +22,7 @@ public class Solo {
         if(teorParaAtingir > 0.01){
             return soloCorrigido = teorParaAtingir;
         }
-        return solo;
+        return fosforoNoSolo;
     }
     //==========================================================================
     //======================Cálculos Potássio===================================

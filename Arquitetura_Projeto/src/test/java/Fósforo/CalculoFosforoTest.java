@@ -25,12 +25,16 @@ public class CalculoFosforoTest {
     
    @Test
    public void testeTeorMenorZeroZeroUm(){
-       var resultado = solo.calculoFosforo(8.59, "Argiloso", 0);
+       double fosforoNoSolo = 8.59, teorParaAtingir = 0;
+       
+       var resultado = solo.calculoFosforo(fosforoNoSolo, "Argiloso", teorParaAtingir);
        assertEquals(8.59, resultado);
    }
    @Test
    public void testeTeorMaiorZeroZeroUm(){
-       var resultado = solo.calculoFosforo(8.59, "Argiloso", 10.0);
+       double fosforoNoSolo = 8.59, teorParaAtingir = 10.0;
+       
+       var resultado = solo.calculoFosforo(fosforoNoSolo, "Argiloso", teorParaAtingir);
        assertEquals(10.0, resultado);
    }
 }
