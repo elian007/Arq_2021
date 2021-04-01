@@ -12,24 +12,24 @@ package Fase2;
 public class CorrecaoRecuperacaoFosforo {
    
     
-    public double qtdAplicarKgHectare(
+    double qtdAplicarKgHectare(
             double teorFosforoAtingir, 
             double fonteFosforo, 
             double eficienciaFosforo,
             double fosforoSolo
             ){
      
-        double e10;
+        double h11;
         if((teorFosforoAtingir - fosforoSolo) < 0.01)
-            e10 = 0.0;
+            h11 = 0.0;
         else
-            e10 = teorFosforoAtingir - fosforoSolo;
+            h11 = teorFosforoAtingir - fosforoSolo;
         
-        double n72 = e10 * 2;
+        double n72 = h11 * 2.0;
         double g14 = n72 * 2.29;
-        double h16 = g14*100/eficienciaFosforo/100;
+        double h16 = g14*100.0/(eficienciaFosforo/100)/100.0;
         
-        double b22 = h16 * 100/ fonteFosforo;
+        double b22 = (h16 * 100.0)/ fonteFosforo;
         
         return b22;
     }
