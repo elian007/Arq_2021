@@ -5,6 +5,7 @@
  */
 package Fase2;
 
+import java.text.DecimalFormat;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -15,8 +16,12 @@ import static org.junit.jupiter.api.Assertions.*;
 public class NewEmptyJUnitTest {
     
     @Test
-    public void test(){
-        assertEquals(123.95079365079366, new CorrecaoRecuperacaoFosforo().qtdAplicarKgHectare(12.0, 18.0, 70.0, 8.59));
+    public void CalcularKgFosforoPorHectare(){
+        DecimalFormat decimal = new DecimalFormat("#,##0.00");
+        
+        double valor = new CorrecaoRecuperacaoFosforo().qtdAplicarKgHectare(12.0, 18.0, 70.0, 8.59);
+        
+        assertEquals(decimal.format(123.95), decimal.format(valor));
     }
     
 }

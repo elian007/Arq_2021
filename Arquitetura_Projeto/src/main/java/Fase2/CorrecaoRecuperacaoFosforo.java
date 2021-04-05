@@ -19,19 +19,18 @@ public class CorrecaoRecuperacaoFosforo {
             double fosforoSolo
             ){
      
-        double h11;
+        double correcaoSolo;
         if((teorFosforoAtingir - fosforoSolo) < 0.01)
-            h11 = 0.0;
+            correcaoSolo = 0.0;
         else
-            h11 = teorFosforoAtingir - fosforoSolo;
+            correcaoSolo = ((teorFosforoAtingir - fosforoSolo) * 2.0) * 2.29;
         
-        double n72 = h11 * 2.0;
-        double g14 = n72 * 2.29;
-        double h16 = g14*100.0/(eficienciaFosforo/100)/100.0;
+       
+        double aplicarCorrecao = (correcaoSolo*100.0) / (eficienciaFosforo/100.0) / 100.0;
         
-        double b22 = (h16 * 100.0)/ fonteFosforo;
+        double KgPorHectareFosforo = (aplicarCorrecao * 100.0)/ fonteFosforo;
         
-        return b22;
+        return KgPorHectareFosforo;
     }
     
 }
