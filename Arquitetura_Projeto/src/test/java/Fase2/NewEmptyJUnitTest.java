@@ -19,7 +19,7 @@ public class NewEmptyJUnitTest {
     public void CalcularKgFosforoPorHectare(){
         DecimalFormat decimal = new DecimalFormat("#,##0.00");
        
-        double valor = new CorrecaoRecuperacaoFosforo().qtdAplicarFosforo(12.0, new FonteFosforo().valorFonte(1), 70.0, 8.59);
+        double valor = new CorrecaoRecuperacaoFosforo().qtdAplicarFosforo(12.0, new FonteFosforo().valorFonteHectare(1), 70.0, 8.59);
         
         assertEquals(decimal.format(123.95), decimal.format(valor));
     }
@@ -28,9 +28,17 @@ public class NewEmptyJUnitTest {
     public void calcularCustoPorHectare(){
         DecimalFormat decimal = new DecimalFormat("#,##0.00");
         
-        double kgPorHectare = new CorrecaoRecuperacaoFosforo().qtdAplicarFosforo(12.0, new FonteFosforo().valorFonte(1), 70.0, 8.59);
+        double kgPorHectare = new CorrecaoRecuperacaoFosforo().qtdAplicarFosforo(12.0, new FonteFosforo().valorFonteHectare(1), 70.0, 8.59);
         double custoPorHectare = new CorrecaoRecuperacaoFosforo().custoCorrecaoFosforo(1260.0, kgPorHectare);
         
         assertEquals(decimal.format(156.18), decimal.format(custoPorHectare));
+    }
+    
+    @Test
+    public void valorEnxofre(){
+        DecimalFormat decimal = new DecimalFormat("#,##0.00");
+        double enxofre = new CorrecaoRecuperacaoFosforo().enxofreKgHectare(1);
+        
+        assertEquals(decimal.format(12.4), decimal.format(enxofre));
     }
 }

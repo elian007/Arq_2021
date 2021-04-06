@@ -11,7 +11,7 @@ package Fase2;
  */
 public class FonteFosforo {
 
-    public double valorFonte(int fonte) {
+    public double valorFonteHectare(int fonte) {
 
         switch (fonte) {
             case 1:
@@ -41,5 +41,35 @@ public class FonteFosforo {
         }
         return 0;
     }
+/*
+     public double valorFonteAlqueire(int fonte) {
 
+        switch (fonte) {
+            case 1:
+                return 0.28;
+            case 2:
+                return 0.2;
+            case 3:
+                return 0.09;
+            case 4:
+                return 0.16;
+            case 5:
+                return 0.28;
+            case 6:
+                return 0.52;    
+            case 7:
+                return 0.52;    
+            case 8:
+                return 0.45;
+            case 9:
+                return 0.28;
+            case 10:
+                return 0.44;
+            case 11:
+                return 0.0;
+            case 12:
+                return 0.18;
+        }
+        return 0;
+    }*/
 }

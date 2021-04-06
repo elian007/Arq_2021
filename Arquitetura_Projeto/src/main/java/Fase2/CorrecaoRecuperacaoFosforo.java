@@ -37,4 +37,26 @@ public class CorrecaoRecuperacaoFosforo {
         return valorTonelada * (qtdFosforoKg/1000);
     }
     
+    
+    double enxofreKgHectare(int fonte) {
+        double enxofre;
+        double fosforoKgHectare = qtdAplicarFosforo(12.0, new FonteFosforo().valorFonteHectare(1), 70.0, 8.59);
+        double alqueire = fosforoKgHectare * 2.42;
+
+        switch (fonte) {
+            case 1:
+                enxofre = (alqueire * 0.1)/2.42;
+                return enxofre;
+            case 5:
+                enxofre = fosforoKgHectare * 0.15;
+                return enxofre;
+            case 12:
+                enxofre = (alqueire * 0.11)/2.42;
+                return enxofre;
+            default:
+                enxofre = 0.0;
+                return enxofre;
+        }
+
+    }
 }
