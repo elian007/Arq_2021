@@ -12,7 +12,7 @@ package Fase2;
 public class CorrecaoRecuperacaoFosforo {
    
     
-    double qtdAplicarKgHectare(
+    double qtdAplicarFosforo(
             double teorFosforoAtingir, 
             double fonteFosforo, 
             double eficienciaFosforo,
@@ -31,6 +31,10 @@ public class CorrecaoRecuperacaoFosforo {
         double KgPorHectareFosforo = (aplicarCorrecao * 100.0)/ fonteFosforo;
         
         return KgPorHectareFosforo;
+    }
+    
+    double custoCorrecaoFosforo(double valorTonelada, double qtdFosforoKg){
+        return valorTonelada * (qtdFosforoKg/1000);
     }
     
 }

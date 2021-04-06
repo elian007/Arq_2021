@@ -18,10 +18,19 @@ public class NewEmptyJUnitTest {
     @Test
     public void CalcularKgFosforoPorHectare(){
         DecimalFormat decimal = new DecimalFormat("#,##0.00");
-        
-        double valor = new CorrecaoRecuperacaoFosforo().qtdAplicarKgHectare(12.0, 18.0, 70.0, 8.59);
+       
+        double valor = new CorrecaoRecuperacaoFosforo().qtdAplicarFosforo(12.0, new FonteFosforo().valorFonte(1), 70.0, 8.59);
         
         assertEquals(decimal.format(123.95), decimal.format(valor));
     }
     
+    @Test
+    public void calcularCustoPorHectare(){
+        DecimalFormat decimal = new DecimalFormat("#,##0.00");
+        
+        double kgPorHectare = new CorrecaoRecuperacaoFosforo().qtdAplicarFosforo(12.0, new FonteFosforo().valorFonte(1), 70.0, 8.59);
+        double custoPorHectare = new CorrecaoRecuperacaoFosforo().custoCorrecaoFosforo(1260.0, kgPorHectare);
+        
+        assertEquals(decimal.format(156.18), decimal.format(custoPorHectare));
+    }
 }
