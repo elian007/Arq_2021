@@ -40,7 +40,7 @@ public class CorrecaoRecuperacaoFosforo {
     
     double enxofreKgHectare(int fonte) {
         double enxofre;
-        double fosforoKgHectare = qtdAplicarFosforo(12.0, new FonteFosforo().valorFonteHectare(1), 70.0, 8.59);
+        double fosforoKgHectare = qtdAplicarFosforo(12.0, new FonteFosforo().valorFosforo(1), 70.0, 8.59);
         double alqueire = fosforoKgHectare * 2.42;
 
         switch (fonte) {
@@ -57,6 +57,12 @@ public class CorrecaoRecuperacaoFosforo {
                 enxofre = 0.0;
                 return enxofre;
         }
-
+    }
+    
+    double calcioKgHectare(int fonte, double fosforoKgHectare){
+        
+        double valorCalcio = new FonteFosforo().valorCalcio(fonte);
+        double calcioKgHectare = fosforoKgHectare * valorCalcio;
+        return calcioKgHectare;
     }
 }
