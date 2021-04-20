@@ -1,14 +1,9 @@
 
 package Fase1;
 
-/**
- *
- * @author elian
- */
 public class Solo {
     
-    //============================Cálculos Fósforo====================================
-    public double calculoFosforo(double fosforoNoSolo, String textura, double teorParaAtingir){
+    double calculoFosforo(double fosforoNoSolo, String textura, double teorParaAtingir){
         double ideal;
         double soloCorrigido;
         
@@ -24,21 +19,19 @@ public class Solo {
         }
         return fosforoNoSolo;
     }
-    //==========================================================================
-    //======================Cálculos Potássio===================================
     
-    public double porcentoParticipacaoAtualPotassioCTCSolo(double potassioNoSolo, double calcioNoSolo, double magnesioNoSolo, double HmaisAL){
+    double porcentoParticipacaoAtualPotassioCTCSolo(double potassioNoSolo, double calcioNoSolo, double magnesioNoSolo, double HmaisAL){
          
          return potassioNoSolo / ((potassioNoSolo + calcioNoSolo + magnesioNoSolo) + HmaisAL) * 100;
      }
     
-    public double equilibrioCorrecaoCTC(double potassioNoSolo, double porcentoDesejadoPotassio, double porcentoAtualPotassioSolo){
+     double equilibrioCorrecaoCTC(double potassioNoSolo, double porcentoDesejadoPotassio, double porcentoAtualPotassioSolo){
         
         return (potassioNoSolo * porcentoDesejadoPotassio / porcentoAtualPotassioSolo) - potassioNoSolo;
    
     }
     
-     public double memoriaDeCalculos(double potassioNoSolo, double correcaoCTC){
+     double memoriaDeCalculos(double potassioNoSolo, double correcaoCTC){
         double correcaoPotassio;
         
         if(correcaoCTC < 0.01){
@@ -51,7 +44,7 @@ public class Solo {
         
     }
      
-     public double calculoPotassio(double potassioNoSolo, double calcioNoSolo, double magnesioNoSolo, double HmaisAL,double porcentoDesejadoPotassio){
+     double calculoPotassio(double potassioNoSolo, double calcioNoSolo, double magnesioNoSolo, double HmaisAL,double porcentoDesejadoPotassio){
         
         if(potassioNoSolo > 0.5){
             return potassioNoSolo;
@@ -62,35 +55,4 @@ public class Solo {
             
         return correcao;
     }
-     
-     
-     //=========================================================================
-     //=========================================================================
-     /*
-      public double calculoCalcio(double solo, double ideal){
-        double resultado = 0;
-        
-        return resultado;
-    }
-       public double calculomagnesio(double solo, double ideal){
-        double resultado = 0;
-        
-        return resultado;
-    }
-        public double calculoEnxofre(double solo, double ideal){
-        double resultado = 0;
-        
-        return resultado;
-    }
-         public double calculoAluminio(double solo, double ideal){
-        double resultado = 0;
-        
-        return resultado;
-    }
-          public double calculoHmaisAL(double solo, double ideal){
-        double resultado = 0;
-        
-        return resultado;
-    }
-*/
 }
